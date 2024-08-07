@@ -18,7 +18,7 @@ const model = (id = proxId++) => {
     };
   }
 
-  console.log("Dados inválidos");
+  console.log("Dados inválidos.");
 };
 
 const store = () => {
@@ -57,7 +57,7 @@ const update = () => {
         console.log("Registro atualizado com sucesso.");
       }
     } else {
-      console.log("Registro não encontrado");
+      console.log("Registro não encontrado.");
     }
   }
 };
@@ -70,9 +70,9 @@ const destroy = () => {
 
     if (indice != -1) {
       db.splice(indice, 1);
-      console.log("Registro excluído com sucesso");
+      console.log("Registro excluído com sucesso.");
     } else {
-      console.log("Registro não encontrado");
+      console.log("Registro não encontrado.");
     }
   }
 };
