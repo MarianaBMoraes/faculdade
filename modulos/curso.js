@@ -16,7 +16,7 @@ const model = (id = proxId++) => {
   if (turno.index()) {
     id_turno = parseInt(prompt("ID do turno: "));
   } else {
-    console.log("Cadastre um 'Turno' para inserir um curso");
+    console.log("Cadastre um 'Turno' para inserir um curso.");
   }
 
   if (nome != "" && horas_totais > 0 && turno.show(id_turno)) {
