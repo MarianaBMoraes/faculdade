@@ -1,7 +1,7 @@
 const prompt = require("prompt-sync")();
 
 const professor = require("./professor.js");
-const matéria = require("./matéria.js");
+const materia = require("./materia.js");
 const sala = require("./sala.js");
 
 const db = [];
@@ -10,23 +10,23 @@ let proxId = 1;
 
 const model = (id = proxId++) => {
   professor.index();
-  const id_professor = prompt("ID do(a) professor(a): ");
+  const id_professor = parseInt(prompt("ID do(a) professor(a): "));
 
-  matéria.index();
-  const id_matéria = prompt("ID da matéria: ");
+  materia.index();
+  const id_materia = parseInt(prompt("ID da matéria: "));
 
   sala.index();
   const id_sala = parseInt(prompt("ID da sala: "));
 
   if (
     professor.show(id_professor) &&
-    matéria.show(id_matéria) &&
+    materia.show(id_materia) &&
     sala.show(id_sala)
   ) {
     return {
       id,
       id_professor,
-      id_matéria,
+      id_materia,
       id_sala,
     };
   }
