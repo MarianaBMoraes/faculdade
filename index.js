@@ -16,11 +16,13 @@ const menuPrincipal = () => {
     console.log(`ESCOLHA O MÓDULO QUE QUER GERENCIAR:
     
     1 - TURNO
-    2 - curso
-    3 - materia
-    4 - aluno
-    5 - professor
+    2 - CURSO
+    3 - MATERIA
+    4 - ALUNO
+    5 - PROFESSOR
     6 - SALA
+    7 - AULA
+    8 - ALUNO E AULA
     0 - SAIR
     `);
 
@@ -41,6 +43,15 @@ const menuPrincipal = () => {
         break;
       case 5:
         menuProfessor();
+        break;
+        case 6:
+        menuSala();
+        break;
+        case 7:
+        menuAula();
+        break;
+        case 8:
+        menuAluno_aula();
         break;
       case 0:
         process.exit();
@@ -262,6 +273,80 @@ const menuSala = () => {
           break;
         case 4:
           sala.destroy();
+          break;
+        case 0:
+          return;
+  
+        default:
+          console.log("Opção inválida.");
+          break;
+      }
+    }
+  };
+
+  const menuAula = () => {
+    console.log("GERENCIAMENTO DE AULA");
+    while (true) {
+      console.log(`ESCOLHA O MÓDULO QUE QUER GERENCIAR:
+    
+                1 - CADASTRAR 
+                2 - LISTAR
+                3 - ATUALIZAR 
+                4 - EXCLUIR 
+                0 - SAIR
+                `);
+  
+      const opcaoServico = parseInt(prompt(": "));
+  
+      switch (opcaoServico) {
+        case 1:
+          aula.store();
+          break;
+        case 2:
+          aula.index();
+          break;
+        case 3:
+          aula.update();
+          break;
+        case 4:
+          aula.destroy();
+          break;
+        case 0:
+          return;
+  
+        default:
+          console.log("Opção inválida.");
+          break;
+      }
+    }
+  };
+
+  const menuAluno_aula = () => {
+    console.log("GERENCIAMENTO DE ALUNO E AULA");
+    while (true) {
+      console.log(`ESCOLHA O MÓDULO QUE QUER GERENCIAR:
+    
+                1 - CADASTRAR 
+                2 - LISTAR
+                3 - ATUALIZAR 
+                4 - EXCLUIR 
+                0 - SAIR
+                `);
+  
+      const opcaoServico = parseInt(prompt(": "));
+  
+      switch (opcaoServico) {
+        case 1:
+          aluno_aula.store();
+          break;
+        case 2:
+          aluno_aula.index();
+          break;
+        case 3:
+          aluno_aula.update();
+          break;
+        case 4:
+          aluno_aula.destroy();
           break;
         case 0:
           return;
